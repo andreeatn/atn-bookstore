@@ -12,7 +12,7 @@ function HomeTrendingCards() {
 
   return (
     <div className="container border-top border-dark">
-      <h2 className="my-4 ">Trending</h2>
+      <h2 className="my-4">Trending</h2>
       <div className="row g-5 mb-5">
         {volumes?.items.map((volume, index) => (
           <div className="col col-12 col-md-4 col-lg-3" key={index}>

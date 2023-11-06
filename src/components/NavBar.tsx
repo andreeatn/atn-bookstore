@@ -1,7 +1,21 @@
 import ATNBookstoreLogo from "assets/logo.svg";
+import ThemeContext from "context/ThemeContext";
+import { useContext, useState } from "react";
 import { IoCartSharp } from "react-icons/io5";
 
 function NavBar() {
+  const { theme, setTheme } = useContext(ThemeContext);
+  const [selectedTheme, setSelectedTheme] = useState(theme);
+  const handleThemeChange = () => {
+    if (selectedTheme === "dark") {
+      setSelectedTheme("light");
+      setTheme("light");
+    } else {
+      setSelectedTheme("dark");
+      setTheme("dark");
+    }
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg fixed-top bg-warning py-0">
@@ -50,6 +64,9 @@ function NavBar() {
                   type="checkbox"
                   role="switch"
                   id="switchColorMode"
+                  checked={selectedTheme === "dark"}
+                  value={selectedTheme}
+                  onChange={handleThemeChange}
                 />
                 <label className="form-check-label">Dark Mode</label>
               </div>

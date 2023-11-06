@@ -17,10 +17,10 @@ function HomeCategoriesCards() {
               height="200vh"
             />
             <div className="card-body">
-              <h5 className="card-title text-center m-0">
+              <h5 className="text-center m-0">
                 <Link
                   to={"#"}
-                  className="stretched-link text-decoration-none text-black"
+                  className="card-title stretched-link text-decoration-none"
                 >
                   Arhitecture
                 </Link>
@@ -37,10 +37,10 @@ function HomeCategoriesCards() {
               height="200vh"
             />
             <div className="card-body">
-              <h5 className="card-title text-center m-0">
+              <h5 className="text-center m-0">
                 <Link
                   to={"#"}
-                  className="stretched-link text-decoration-none text-black"
+                  className="card-title stretched-link text-decoration-none"
                 >
                   Sports
                 </Link>
@@ -57,10 +57,10 @@ function HomeCategoriesCards() {
               height="200vh"
             />
             <div className="card-body">
-              <h5 className="card-title text-center m-0">
+              <h5 className="text-center m-0">
                 <Link
                   to={"#"}
-                  className="stretched-link text-decoration-none text-black"
+                  className="card-title stretched-link text-decoration-none"
                 >
                   Crafts
                 </Link>
@@ -77,10 +77,10 @@ function HomeCategoriesCards() {
               height="200vh"
             />
             <div className="card-body">
-              <h5 className="card-title text-center m-0">
+              <h5 className="text-center m-0">
                 <Link
                   to={"#"}
-                  className="stretched-link text-decoration-none text-black"
+                  className="card-title stretched-link text-decoration-none"
                 >
                   History
                 </Link>

@@ -1,3 +1,16 @@
+//Headings - Dark mode
 $headings-color-dark: #ffffff;
+
+//Form select
+$form-select-focus-border-color: #adb5bd;
+$form-select-focus-width: .25rem;
+$form-select-focus-box-shadow: 0 0 0 $form-select-focus-width $form-select-focus-border-color;
+
+//Form check
+$form-check-input-focus-border:   #495057;
+
+$form-check-input-checked-bg-color:      #495057;
+$form-check-input-checked-border-color:  #212529;
+ 
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss';

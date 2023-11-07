@@ -1,32 +1,26 @@
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import Subjects from "data/Subjects";
 import { FetchResponse } from "entities/FetchResponse";
 import Volume from "entities/Volume";
 import VolumeQuery from "entities/VolumeQuery";
 import apiClient from "services/apiClient";
 
-export function useVolumesBySubject(volumeQuery: VolumeQuery){
+const useVolumes = (volumeQuery: VolumeQuery) => {
+
     return useQuery<FetchResponse<Volume>,Error>({
         queryKey:['volumes', volumeQuery],
         queryFn: () => 
             apiClient.get(`/volumes/`,{params:{
-                q: `subject:${volumeQuery.volumeSubject}`,
-                orderBy: volumeQuery.orderBy ,
+                q: `subject:${volumeQuery.volumeSubject} `,
+                orderBy: volumeQuery.orderBy,
+                startIndex: (volumeQuery.startIndex - 1) * volumeQuery.resultNo,
                 maxResults: volumeQuery.resultNo
             }})
-            .then(res => res.data)
-            .catch(err => err)
+            .then(res => {
+                return res.data})
+            .catch(err => err),
     })
 }
 
-export function useVolumesById(volumeQuery: VolumeQuery){
-    return useQuery<FetchResponse<Volume>,Error>({
-        queryKey:['volumes', volumeQuery],
-        queryFn: () => 
-            apiClient.get(`/volumes/${volumeQuery.volumeId}`,{params:{
-                orderBy: volumeQuery.orderBy ,
-                maxResults: volumeQuery.resultNo
-            }})
-            .then(res => res.data)
-            .catch(err => err)
-    })
-}
+export default useVolumes;
+

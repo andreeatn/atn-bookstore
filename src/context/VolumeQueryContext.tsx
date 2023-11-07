@@ -14,7 +14,12 @@ const VolumeQueryContext = React.createContext({
 export default VolumeQueryContext;
 
 export function VolumeQueryProvider({ children }: Props) {
-  const [query, setQuery] = useState<VolumeQuery>({} as VolumeQuery);
+  const [query, setQuery] = useState<VolumeQuery>({
+    volumeSubject: "*",
+    orderBy: "relevance",
+    resultNo: 12,
+    startIndex: 1,
+  } as VolumeQuery);
 
   return (
     <VolumeQueryContext.Provider

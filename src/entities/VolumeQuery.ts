@@ -1,6 +1,6 @@
 export default interface VolumeQuery{
-    volumeSubject?:string,
-    volumeId?:string,
-    orderBy?:'relevance' | 'newest',
-    resultNo?: number
+    volumeSubject:string,
+    orderBy: string,
+    resultNo: number,
+    startIndex: number,
 }

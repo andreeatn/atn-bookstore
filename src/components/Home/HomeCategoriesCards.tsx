@@ -3,91 +3,53 @@ import SportsImg from "assets/sports.jpg";
 import CraftsImg from "assets/crafts.jpg";
 import HistoryImg from "assets/history.jpg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import VolumeQueryContext from "context/VolumeQueryContext";
 
 function HomeCategoriesCards() {
+  const { volumeQuery, setVolumeQuery } = useContext(VolumeQueryContext);
+  const categories = [
+    {
+      name: "Architecture",
+      subject: "architecture",
+      thumbnail: ArhitectureImg,
+    },
+    { name: "Sports", subject: "sports", thumbnail: SportsImg },
+    { name: "Crafts", subject: "crafts", thumbnail: CraftsImg },
+    { name: "History", subject: "history", thumbnail: HistoryImg },
+  ];
+
+  const handleClickCategoryCard = (categorySubject: string) => {
+    setVolumeQuery({ ...volumeQuery, volumeSubject: categorySubject });
+    window.scroll(0, 0);
+  };
+
   return (
     <div className="container my-1">
       <div className="row g-1">
-        <div className="col col-6">
-          <div className="card border-secondary rounded-0">
-            <img
-              src={ArhitectureImg}
-              className="card-img-top object-fit-cover rounded-0"
-              alt="Palazzo Venezia in Rome"
-              height="200vh"
-            />
-            <div className="card-body">
-              <h5 className="text-center m-0">
-                <Link
-                  to={"#"}
-                  className="card-title stretched-link text-decoration-none"
-                >
-                  Arhitecture
-                </Link>
-              </h5>
+        {categories.map((category) => (
+          <div className="col col-6" key={category.subject}>
+            <div className="card border-secondary rounded-0">
+              <img
+                src={category.thumbnail}
+                className="card-img-top object-fit-cover rounded-0"
+                alt="Palazzo Venezia in Rome"
+                height="200vh"
+              />
+              <div className="card-body">
+                <h5 className="text-center m-0">
+                  <Link
+                    to={"/volumes"}
+                    className="card-title stretched-link text-decoration-none"
+                    onClick={() => handleClickCategoryCard(category.subject)}
+                  >
+                    {category.name}
+                  </Link>
+                </h5>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col col-6">
-          <div className="card border-secondary rounded-0">
-            <img
-              src={SportsImg}
-              className="card-img-top object-fit-cover rounded-0"
-              alt="Man swimming"
-              height="200vh"
-            />
-            <div className="card-body">
-              <h5 className="text-center m-0">
-                <Link
-                  to={"#"}
-                  className="card-title stretched-link text-decoration-none"
-                >
-                  Sports
-                </Link>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="col col-6">
-          <div className="card border-secondary rounded-0">
-            <img
-              src={CraftsImg}
-              className="card-img-top object-fit-cover rounded-0"
-              alt="Crafts utensils"
-              height="200vh"
-            />
-            <div className="card-body">
-              <h5 className="text-center m-0">
-                <Link
-                  to={"#"}
-                  className="card-title stretched-link text-decoration-none"
-                >
-                  Crafts
-                </Link>
-              </h5>
-            </div>
-          </div>
-        </div>
-        <div className="col col-6">
-          <div className="card border-secondary rounded-0">
-            <img
-              src={HistoryImg}
-              className="card-img-top object-fit-cover rounded-0"
-              alt="Group of people holding weapons and a flag"
-              height="200vh"
-            />
-            <div className="card-body">
-              <h5 className="text-center m-0">
-                <Link
-                  to={"#"}
-                  className="card-title stretched-link text-decoration-none"
-                >
-                  History
-                </Link>
-              </h5>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

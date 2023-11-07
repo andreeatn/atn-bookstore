@@ -1,7 +1,16 @@
 import CarouselImg1 from "assets/traveling-books-landscape.jpg";
 import CarouselImg2 from "assets/agatha-christie-biography-landscape.png";
+import { useContext } from "react";
+import VolumeQueryContext from "context/VolumeQueryContext";
+import { Link } from "react-router-dom";
 
 function HomeCarousel() {
+  const { volumeQuery, setVolumeQuery } = useContext(VolumeQueryContext);
+  const handleClickItem1 = () => {
+    setVolumeQuery({ ...volumeQuery, volumeSubject: "travel" });
+    window.scroll(0, 0);
+  };
+
   return (
     <div
       id="carouselHomePage"
@@ -18,9 +27,13 @@ function HomeCarousel() {
           <div className="carousel-caption top-0 my-lg-5">
             <h4 className="my-0 my-md-2">Take a break</h4>
             <p className="my-0 my-md-2">New volumes on traveling.</p>
-            <button className="btn btn-sm btn-light my-1 my-lg-3">
+            <Link
+              to="/volumes"
+              className="btn btn-sm btn-light my-1 my-lg-3"
+              onClick={handleClickItem1}
+            >
               Check them here
-            </button>
+            </Link>
           </div>
         </div>
         <div className="carousel-item">

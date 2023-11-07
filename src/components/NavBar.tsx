@@ -2,6 +2,7 @@ import ATNBookstoreLogo from "assets/logo.svg";
 import ThemeContext from "context/ThemeContext";
 import { useContext, useState } from "react";
 import { IoCartSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -52,9 +53,12 @@ function NavBar() {
             id="navbarNavDropdown"
           >
             <div className="navbar-nav">
-              <a href="/" className="text-decoration-none text-black mx-2 my-1">
-                All books
-              </a>
+              <Link
+                to={"volumes"}
+                className="text-decoration-none text-black mx-2 my-1"
+              >
+                All Volumes
+              </Link>
               <a href="/" className="text-decoration-none text-black mx-2 my-1">
                 Contact
               </a>

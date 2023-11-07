@@ -1,6 +1,11 @@
 import ATNBookstoreLogo from "assets/logo.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
+  const handleLinkClick = () => {
+    window.scroll(0, 0);
+  };
+
   return (
     <div className="container bg-warning">
       <div className="row py-3">
@@ -45,9 +50,13 @@ function Footer() {
               </a>
             </li>
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <Link
+                to={"/volumes"}
+                className="text-decoration-none text-black"
+                onClick={handleLinkClick}
+              >
                 All Books
-              </a>
+              </Link>
             </li>
             <li className="my-1">
               <a href="#" className="text-decoration-none text-black">

@@ -2,12 +2,18 @@ import CarouselImg1 from "assets/traveling-books-landscape.jpg";
 import CarouselImg2 from "assets/agatha-christie-biography-landscape.png";
 import { useContext } from "react";
 import VolumeQueryContext from "context/VolumeQueryContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function HomeCarousel() {
   const { volumeQuery, setVolumeQuery } = useContext(VolumeQueryContext);
+  const navigate = useNavigate();
   const handleClickItem1 = () => {
     setVolumeQuery({ ...volumeQuery, volumeSubject: "travel" });
+    window.scroll(0, 0);
+  };
+  const handleClickItem2 = () => {
+    const volumeId = "pyWqDwAAQBAJ";
+    navigate(`/volumes/${volumeId}`);
     window.scroll(0, 0);
   };
 
@@ -47,7 +53,10 @@ function HomeCarousel() {
             <p className="my-0 my-md-2">
               Learn more about the life of Agatha Christie.
             </p>
-            <button className="btn btn-sm btn-secondary my-1 my-lg-3">
+            <button
+              className="btn btn-sm btn-secondary my-1 my-lg-3"
+              onClick={handleClickItem2}
+            >
               See more details
             </button>
           </div>

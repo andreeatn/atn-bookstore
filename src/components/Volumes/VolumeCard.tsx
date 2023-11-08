@@ -1,6 +1,7 @@
 import ImgPlaceholder from "assets/image-placeholder.webp";
 import Volume from "entities/Volume";
 import { BsCartPlusFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 interface Props {
   volume: Volume;
@@ -29,11 +30,15 @@ function VolumeCard({ volume }: Props) {
           {volume.saleInfo.listPrice?.currencyCode}
         </p>
         <div>
-          <button className="btn btn-secondary p-1 me-1 p-md-2 mx-md-2">
+          <Link
+            to={`/volumes/${volume.id}`}
+            className="btn btn-secondary p-1 me-1 p-md-2 mx-md-2"
+            onClick={() => window.scroll(0, 0)}
+          >
             Details
-          </button>
+          </Link>
           <button
-            // disabled
+            disabled={!volume.saleInfo.listPrice}
             className="btn btn-secondary text-warning py-1 py-md-2"
           >
             <BsCartPlusFill />

@@ -42,7 +42,11 @@ function HomeTrendingCards() {
                 <p className="card-subtitle my-1">
                   {volume.volumeInfo.authors[0]}
                 </p>
-                <Link to="#" className="stretched-link"></Link>
+                <Link
+                  to={`/volumes/${volume.id}`}
+                  className="stretched-link"
+                  onClick={() => window.scroll(0, 0)}
+                ></Link>
               </div>
             </div>
           </div>

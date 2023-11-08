@@ -1,15 +1,12 @@
 import { useQuery } from "@tanstack/react-query"
-import { FetchResponse } from "entities/FetchResponse"
 import Volume from "entities/Volume"
-import VolumeQuery from "entities/VolumeQuery"
 import apiClient from "services/apiClient"
 
-const useVolumeDetails = (volumeId: VolumeQuery) => {
-    return useQuery<FetchResponse<Volume>,Error>({
+const useVolumeDetails = (volumeId: string | undefined) => {
+    return useQuery<Volume,Error>({
         queryKey:['volume', volumeId],
         queryFn: () => 
-            apiClient.get(`/volumes/${volumeId}`,{params:{
-            }})
+            apiClient.get(`/volumes/${volumeId}`)
             .then(res => res.data)
             .catch(err => err)
     })

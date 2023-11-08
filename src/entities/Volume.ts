@@ -5,8 +5,9 @@ export default interface Volume{
         categories: string[],
         description: string,
         imageLinks: {thumbnail: string},
+        language: string,
         pageCount: number,
-        publisherDate: string,
+        publishedDate: string,
         publisher: string,
         subtitle: string,
         title: string

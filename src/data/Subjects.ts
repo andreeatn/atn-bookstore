@@ -1,4 +1,4 @@
-export default [
+const Subjects = [
     {name:"All",         id:"*"},
     {name:"Architecture",id:"architecture"},
     {name:"Art",         id:"art"},
@@ -37,3 +37,5 @@ export default [
     {name:"Travel",      id:"travel"},
   
 ]
+
+export default Subjects;

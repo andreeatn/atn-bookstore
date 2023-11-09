@@ -1,5 +1,4 @@
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import Subjects from "data/Subjects";
+import { useQuery } from "@tanstack/react-query";
 import { FetchResponse } from "entities/FetchResponse";
 import Volume from "entities/Volume";
 import VolumeQuery from "entities/VolumeQuery";

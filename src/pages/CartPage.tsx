@@ -1,5 +1,4 @@
 import CartContainer from "components/Cart/CartContainer";
-import CartSummary from "components/Cart/CartSummary";
 import ThemeContext from "context/ThemeContext";
 import { useContext } from "react";
 

@@ -42,12 +42,12 @@ export function CartProvider({ children }: Props) {
           newItems.length === 0
             ? (newItems = JSON.stringify(item))
             : (newItems += "\n" + JSON.stringify(item));
-          return newItems;
         } else {
           newItems.length === 0
             ? (newItems = JSON.stringify(item))
             : (newItems += "\n" + JSON.stringify(item));
         }
+        return newItems;
       });
 
       if (!matchFound) {
@@ -71,7 +71,6 @@ export function CartProvider({ children }: Props) {
         newItems.length === 0
           ? (newItems = JSON.stringify(item))
           : (newItems += "\n" + JSON.stringify(item));
-        // return newItems;
       } else {
         newItems.length === 0
           ? (newItems = JSON.stringify(item))
@@ -79,6 +78,7 @@ export function CartProvider({ children }: Props) {
       }
 
       sessionStorage.setItem(sessionStorageItemKey, newItems);
+      return newItems;
     });
   };
 

@@ -42,9 +42,13 @@ function Footer() {
               </Link>
             </li>
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <Link
+                to={"/contact"}
+                className="text-decoration-none text-black"
+                onClick={handleLinkClick}
+              >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

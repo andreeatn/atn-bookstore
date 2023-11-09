@@ -68,7 +68,7 @@ function NavBar() {
                 All Volumes
               </Link>
               <Link
-                to={"/"}
+                to={"/contact"}
                 className="text-decoration-none text-black mx-2 my-1"
                 onClick={handleLinkClick}
               >

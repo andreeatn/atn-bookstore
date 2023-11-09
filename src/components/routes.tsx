@@ -5,6 +5,7 @@ import VolumesPage from "pages/VolumesPage";
 import CartPage from "pages/CartPage";
 import VolumeDetailsPage from "pages/VolumeDetailsPage";
 import LegalTermsPage from "pages/LegalTermsPage";
+import ContactPage from "pages/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <HomePage /> },
       { path: "/cart", element: <CartPage /> },
+      { path: "/contact", element: <ContactPage /> },
       { path: "/legal", element: <LegalTermsPage /> },
       { path: "/volumes", element: <VolumesPage /> },
       { path: "/volumes/:id", element: <VolumeDetailsPage /> },

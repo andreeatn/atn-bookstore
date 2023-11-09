@@ -7,6 +7,7 @@ import VolumeDetailsPage from "pages/VolumeDetailsPage";
 import LegalTermsPage from "pages/LegalTermsPage";
 import ContactPage from "pages/ContactPage";
 import AboutPage from "pages/AboutPage";
+import ErrorPage from "pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: "/volumes", element: <VolumesPage /> },
       { path: "/volumes/:id", element: <VolumeDetailsPage /> },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 

@@ -1,6 +1,7 @@
 import ATNBookstoreLogo from "assets/logo.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import FooterSubscribeForm from "./FooterSubscribeForm";
 
 function Footer() {
   const handleLinkClick = () => {
@@ -21,26 +22,7 @@ function Footer() {
             />
             <h6>(C) 2023</h6>
           </div>
-          <div className="row newsletter my-4 mb-md-0 ">
-            <div className="col-12 col-lg-9 col-xl-7">
-              <h5 className="mb-1">Subscribe to our newsletter</h5>
-              <p className="mb-1">
-                Monthly promotions and latest book releases
-              </p>
-              <div className="d-flex flex-row">
-                <label className="visually-hidden">Email address</label>
-                <input
-                  id="newsletter"
-                  type="text"
-                  className="form-control py-1"
-                  placeholder="Email address"
-                />
-                <button className="btn btn-sm btn-dark mx-2" type="button">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
+          <FooterSubscribeForm />
         </div>
         <div className="col-12 col-md-3 col-lg-2 ms-md-5">
           <h5>Content links</h5>

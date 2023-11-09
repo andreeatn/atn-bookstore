@@ -47,22 +47,22 @@ function VolumeDetailsContainer() {
             ))}
           </h6>
           <h5 className="mt-5 mb-3">Details</h5>
-          <p className="h6 fw-normal">
+          <p className="text-light-emphasis my-1">
             Format:{" "}
             <span className="badge bg-secondary">
               {volume?.saleInfo.isEbook ? "EBook" : "Paperback"}
             </span>
           </p>
-          <p className="h6 fw-normal">
+          <p className="text-light-emphasis my-1">
             Language: <span>{volume?.volumeInfo.language}</span>
           </p>
-          <p className="h6 fw-normal">
+          <p className="text-light-emphasis my-1">
             Page Count: <span>{volume?.volumeInfo.pageCount}</span>
           </p>
-          <p className="h6 fw-normal">
+          <p className="text-light-emphasis my-1">
             Publisher: <span>{volume?.volumeInfo.publisher}</span>
           </p>
-          <p className="h6 fw-normal">
+          <p className="text-light-emphasis my-1">
             Published Date: <span>{volume?.volumeInfo.publishedDate}</span>
           </p>
         </div>
@@ -76,7 +76,7 @@ function VolumeDetailsContainer() {
       <div className="row">
         <div className="col col-12">
           <h4 className="mt-5 mb-4">Description</h4>
-          <div className="h6 fw-normal">
+          <div className="text-light-emphasis">
             {volume?.volumeInfo.description
               ? parse(volume?.volumeInfo.description)
               : "No description available"}

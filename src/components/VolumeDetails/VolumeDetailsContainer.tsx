@@ -4,11 +4,21 @@ import useVolumeDetails from "hooks/useVolumeDetails";
 import React from "react";
 import VolumeDetailsAddToCart from "./VolumeDetailsAddToCart";
 import { useParams } from "react-router-dom";
+import CartItem from "entities/CartItem";
 
 function VolumeDetailsContainer() {
   const params = useParams();
   const { data: volume } = useVolumeDetails(params.id);
   const authorsNo = volume?.volumeInfo.authors.length;
+  let currentItem: CartItem = {} as CartItem;
+  volume &&
+    (currentItem = {
+      volumeId: volume.id,
+      title: volume.volumeInfo.title,
+      quantity: 1,
+      priceAmount: volume.saleInfo?.listPrice?.amount,
+      thumbnail: volume.volumeInfo.imageLinks?.thumbnail,
+    });
 
   return (
     <div className="container py-5">
@@ -57,7 +67,10 @@ function VolumeDetailsContainer() {
           </p>
         </div>
         <div className="col col-12 col-md-12 col-lg-3">
-          <VolumeDetailsAddToCart saleInfo={volume?.saleInfo} />
+          <VolumeDetailsAddToCart
+            saleInfo={volume?.saleInfo}
+            cartItem={currentItem}
+          />
         </div>
       </div>
       <div className="row">

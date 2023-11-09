@@ -16,6 +16,9 @@ function NavBar() {
       setTheme("dark");
     }
   };
+  const handleLinkClick = () => {
+    window.scroll(0, 0);
+  };
 
   return (
     <>
@@ -42,11 +45,15 @@ function NavBar() {
             />
           </a>
 
-          <button className="btn btn-dark mx-3 d-inline-block d-lg-none">
+          <Link
+            to={"/cart"}
+            className="btn btn-dark mx-3 d-inline-block d-lg-none"
+            onClick={handleLinkClick}
+          >
             <span>
               <IoCartSharp />
             </span>
-          </button>
+          </Link>
 
           <div
             className="collapse navbar-collapse justify-content-end"
@@ -56,12 +63,17 @@ function NavBar() {
               <Link
                 to={"volumes"}
                 className="text-decoration-none text-black mx-2 my-1"
+                onClick={handleLinkClick}
               >
                 All Volumes
               </Link>
-              <a href="/" className="text-decoration-none text-black mx-2 my-1">
+              <Link
+                to={"/"}
+                className="text-decoration-none text-black mx-2 my-1"
+                onClick={handleLinkClick}
+              >
                 Contact
-              </a>
+              </Link>
               <div className="form-check form-switch  mx-2 mx-lg-4 my-1">
                 <input
                   className="form-check-input"
@@ -76,11 +88,13 @@ function NavBar() {
               </div>
             </div>
           </div>
-          <button className="btn btn-dark mx-3 d-none d-lg-inline-block">
-            <span>
-              <IoCartSharp />
-            </span>
-          </button>
+          <Link
+            to={"/cart"}
+            className="btn btn-dark mx-3 d-none d-lg-inline-block"
+            onClick={handleLinkClick}
+          >
+            <IoCartSharp />
+          </Link>
         </div>
       </nav>
     </>

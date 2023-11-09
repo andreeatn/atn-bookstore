@@ -14,7 +14,8 @@ const ThemeContext = React.createContext({
 export default ThemeContext;
 
 export function ThemeProvider({ children }: Props) {
-  const cachedTheme = localStorage.getItem("atn-bookstore-theme");
+  const localSessionItemKey = "atn-bookstore-theme";
+  const cachedTheme = localStorage.getItem(localSessionItemKey);
 
   const [currentTheme, setCurrentTheme] = useState(
     cachedTheme ? cachedTheme : "dark"
@@ -35,7 +36,7 @@ export function ThemeProvider({ children }: Props) {
     }
 
     if (newTheme) {
-      localStorage.setItem("atn-bookstore-theme", newTheme);
+      localStorage.setItem(localSessionItemKey, newTheme);
       setCurrentTheme(newTheme);
 
       newTheme === "dark" ? setBaseColor("black") : setBaseColor("white");

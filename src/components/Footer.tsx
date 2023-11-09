@@ -1,5 +1,6 @@
 import ATNBookstoreLogo from "assets/logo.svg";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Footer() {
   const handleLinkClick = () => {
@@ -69,19 +70,28 @@ function Footer() {
           <h5>Legal</h5>
           <ul className="list-unstyled">
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <HashLink
+                to={"/legal#delivery-terms"}
+                className="text-decoration-none text-black"
+              >
                 Delivery Terms
-              </a>
+              </HashLink>
             </li>
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <HashLink
+                to="/legal#return-policy"
+                className="text-decoration-none text-black"
+              >
                 Return Policy
-              </a>
+              </HashLink>
             </li>
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <HashLink
+                to="/legal#confidentiality-policy"
+                className="text-decoration-none text-black"
+              >
                 Confidentiality Policy
-              </a>
+              </HashLink>
             </li>
           </ul>
         </div>

@@ -28,9 +28,13 @@ function Footer() {
           <h5>Content links</h5>
           <ul className="list-unstyled">
             <li className="my-1">
-              <a href="#" className="text-decoration-none text-black">
+              <Link
+                to={"/about"}
+                className="text-decoration-none text-black"
+                onClick={handleLinkClick}
+              >
                 About
-              </a>
+              </Link>
             </li>
             <li className="my-1">
               <Link

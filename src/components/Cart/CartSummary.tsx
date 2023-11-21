@@ -33,7 +33,7 @@ function CartSummary({ productsNo, productsPrice }: Props) {
       <div className="card-footer ">
         <div className="row ">
           <div className="col h6">Total</div>
-          <div className="col h6"> {totalPrice} RON</div>
+          <div className="col h6"> {totalPrice.toFixed(2)} RON</div>
         </div>
       </div>
     </div>
